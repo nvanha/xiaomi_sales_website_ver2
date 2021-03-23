@@ -1,0 +1,431 @@
+$primary-color: #ff6700;
+$text-gray: #b0b0b0;
+$text-black: #616161;
+$bg-html: #f5f5f5;
+$bg-header: #212121;
+$bg-category: #E9EAEB;
+$text-category: #3C3C3C;
+
+@mixin flex($align: flex-start, $justify: flex-start, $wrap: nowrap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: $bg-html;
+}
+
+.wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: $bg-header;
+    border-bottom: 3px solid $primary-color;
+    padding: 2rem;
+    &__inner {
+        @include flex(center, space-between);
+    }
+    &__item {
+        @include flex(center);
+    }
+    &__title {
+        color: $text-gray;
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-left: 2rem;
+        transition: color 0.25s linear;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+    &__user {
+        cursor: pointer;
+        color: $primary-color;
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin-right: 2rem;
+        text-decoration: underline;
+    }
+    &__logout {
+        cursor: pointer;
+        color: $text-gray;
+        font-size: 1.6rem;
+        font-weight: 400;
+        transition: color 0.25s linear;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.main {
+    &__inner {
+        @include flex(stretch);
+    }
+    &__category {
+        width: 20%;
+        background-color: $bg-header;
+        &-title {
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
+        }
+        &-list {
+            padding: 2rem;
+        }
+        &-item {
+            &:first-child > a {
+                margin-top: 0;
+            }
+        }
+        &-link {
+            color: $text-gray;
+            font-size: 1.4rem;
+            font-weight: 400;
+            transition: color 0.25s linear;
+            display: block;
+            margin-top: 2rem;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+    &__content {
+        padding: 2rem;
+        width: 80%;
+        min-height: 100vh;
+        &-item {
+            &:first-child {
+                margin-bottom: 5rem;
+            }
+        }
+        &-title {
+            padding: 2rem;
+            background-color: $bg-category;
+            border-radius: 2rem;
+            color: $primary-color;
+            font-size: 1.4rem;
+            font-weight: 500;
+            span {
+                color: $text-category;
+            }
+        }
+    }
+    &__form {
+        margin-top: 2rem;
+        &-table {
+            width: 100%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            color: $text-black;
+            font-size: 1.4rem;
+            font-weight: 400;
+            // text-align: center;
+            th, td {
+                padding: 2rem;
+                border: 1px solid #ccc;
+            }
+            td > img {
+                height: 10rem;
+                margin: 0 auto;
+            }
+            th {
+                font-weight: 600;
+            }
+            tr {
+                &:first-child > th,
+                &:first-child > td {
+                    border-top: 2px solid $primary-color;
+                }
+            }
+        }
+        &-input {
+            border: 0;
+            outline: none;
+            background-color: transparent;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $text-black;
+            font-family: "Poppins", sans-serif;
+            width: 100%;
+            transition: opacity 0.25s linear;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        &-submit {
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 1rem;
+            background-color: $primary-color;
+            color: #ffffff;
+            font-family: "Poppins", sans-serif;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            transition: opacity 0.25s linear;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        &-select {
+            border-radius: 5rem;
+            padding: 1rem;
+            outline: none;
+            background-color: transparent;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $text-black;
+            font-family: "Poppins", sans-serif;
+            overflow: hidden;
+        }
+        &-option {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $text-black;
+            font-family: "Poppins", sans-serif;
+        }
+        &-file {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $text-black;
+            font-family: "Poppins", sans-serif;
+        }
+        &-area {
+            border-radius: 1rem;
+            padding: 1rem;
+            overflow: hidden;
+            outline: none;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $text-black;
+            font-family: "Poppins", sans-serif;
+        }
+    }
+    &__feature {
+        margin-top: 2rem;
+        &-table {
+            width: 100%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            color: $text-black;
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-align: center;
+            th, td {
+                padding: 2rem;
+                border: 1px solid #ccc;
+            }
+            th {
+                font-weight: 600;
+                &:nth-child(1) {
+                    width: 5%;
+                }
+                &:nth-child(2) {
+                    width: 10%;
+                }
+                &:nth-child(3) {
+                    width: 10%;
+                }
+                &:nth-child(4) {
+                    width: 10%;
+                }
+                &:nth-child(5) {
+                    width: 10%;
+                }
+                &:nth-child(6) {
+                    width: 10%;
+                }
+                &:nth-child(7) {
+                    width: 10%;
+                }
+                &:nth-child(8) {
+                    width: 20%;
+                }
+                &:nth-child(9) {
+                    width: 15%;
+                }
+            }
+            tr {
+                &:first-child > th,
+                &:first-child > td {
+                    border-top: 2px solid $primary-color;
+                }
+            }
+            td > a {
+                color: $primary-color;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            td > img {
+                height: 10rem;
+            }
+        }
+    }
+}
+
+.footer {
+    padding: 2rem 0;
+    background-color: $bg-header;
+    border-top: 3px solid $primary-color;
+    &__inner {
+        text-align: center;
+    }
+    &__name {
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $text-gray;
+        margin-bottom: 1rem;
+        transition: color 0.25s linear;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+    &__social {
+        margin-top: 1rem;
+    }
+    &__link {
+        &:last-child > i {
+            margin-right: 0;
+        }
+        i {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $text-gray;
+            margin-right: 2rem;
+            transition: color 0.25s linear;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.logo {
+    img {
+        height: 5.5rem;
+    }
+}
+
+.login {
+    background-color: $text-category;
+    width: 100%;
+    height: 100vh;
+    &__inner {
+        background-color: $bg-category;
+        border: 1px solid $primary-color;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 1rem;
+        box-shadow: 0 2px 10px $primary-color;
+    }
+}
+
+.form {
+    text-align: center;
+    width: 500px;
+    &__title {
+        color: $bg-header;
+        font-size: 4rem;
+        font-weight: 600;
+        border-bottom: 1px solid $primary-color;
+        padding: 2rem;
+        margin-bottom: 3rem
+    }
+    &__label {
+        display: block;
+        color: $text-black;
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+    &__input {
+        outline: none;
+        display: block;
+        border: 1px solid $text-black;
+        border-radius: 2rem;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $text-black;
+        background-color: transparent;
+        transition: border 0.25s linear;
+        &:hover {
+            border: 1px solid $primary-color;
+        }
+    }
+    &__login {
+        margin-bottom: 3rem;
+        margin-top: 1rem;
+        background-color: $primary-color;
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        outline: none;
+        cursor: pointer;
+        border: 0;
+        border-radius: 2rem;
+        padding: 1rem 2rem;
+        transition: opacity 0.25s linear;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.center {
+    text-align: center;
+}
