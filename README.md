@@ -1,4 +1,4 @@
-### Xiaomi Sales Website Version 2 - [nvanha][website]
+### [Xiaomi Sales Website Version 2][link_ver2] - [nvanha][website]
 
 ## Introduce
 - This is a complete upgrade compared to [Version 1][link_ver1]
@@ -42,3 +42,4 @@ localhost/xiaomi_sales_website_ver2/admincp/index.php
 [instagram]: https://www.instagram.com/_haa_nguyen
 [facebook]: https://www.facebook.com/nvh1120
 [link_ver1]: https://github.com/nvanha/xiaomi_sales_website_ver1
+[link_ver2]: https://github.com/nvanha/xiaomi_sales_website_ver2
