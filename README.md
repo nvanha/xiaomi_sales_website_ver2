@@ -1,4 +1,4 @@
-### [Xiaomi Sales Website Version 2][link_ver2] - [nvanha][website]
+### [Xiaomi Sales Website Version 2][link_ver2] - [nvanha][website] 👋
 
 ## Introduce
 - This is a complete upgrade compared to [Version 1][link_ver1]
